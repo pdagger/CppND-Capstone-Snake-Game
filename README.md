@@ -8,6 +8,13 @@ The Capstone Project gives you a chance to integrate what you've learned through
 
 In this project, you can build your own C++ application or extend this Snake game, following the principles you have learned throughout this Nanodegree Program. This project will demonstrate that you can independently create applications using a wide range of C++ features.
 
+# Criteria:
+1. The project makes use of references in function declarations.
+
+At least two variables are defined as references, or two functions use pass-by-reference in the project code.
+
+snake.h line 21, snake.cpp lines 22-29
+
 ## Dependencies for Running Locally
 * cmake >= 3.7
   * All OSes: [click here for installation instructions](https://cmake.org/install/)
