@@ -19,6 +19,15 @@ void Snake::Update() {
   }
 }
 
+void Snake::SnakeStatus(bool& status, SDL_Point &current_head_cell, std::vector<SDL_Point> body){
+  // Checks if the Snake is dead or alive
+  for (auto const &item : body) {
+    if (current_head_cell.x == item.x && current_head_cell.y == item.y) {
+      status = false;
+    }
+  }
+}
+
 void Snake::UpdateHead() {
   switch (direction) {
     case Direction::kUp:
@@ -56,11 +65,7 @@ void Snake::UpdateBody(SDL_Point &current_head_cell, SDL_Point &prev_head_cell) 
   }
 
   // Check if the snake has died.
-  for (auto const &item : body) {
-    if (current_head_cell.x == item.x && current_head_cell.y == item.y) {
-      alive = false;
-    }
-  }
+  SnakeStatus(alive, current_head_cell, body);
 }
 
 void Snake::GrowBody() { growing = true; }

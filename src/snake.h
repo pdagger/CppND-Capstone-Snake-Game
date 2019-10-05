@@ -18,6 +18,7 @@ class Snake {
 
   void GrowBody();
   bool SnakeCell(int x, int y);
+  void SnakeStatus(bool &status, SDL_Point &current_cell, std::vector<SDL_Point> body);
 
   Direction direction = Direction::kUp;
 
