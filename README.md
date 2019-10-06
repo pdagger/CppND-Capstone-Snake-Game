@@ -15,6 +15,26 @@ At least two variables are defined as references, or two functions use pass-by-r
 
 snake.h line 21, snake.cpp lines 22-29
 
+user.h line 9, user.cpp lines 31-35
+
+2. The project uses Object Oriented Programming techniques.
+
+The project code is organized into classes with class attributes to hold the data, and class methods to perform tasks.
+
+user.h and user.cpp
+
+3. Classes use appropriate access specifiers for class members.
+
+All class data members are explicitly specified as public, protected, or private.
+
+user.h lines 6 to 12
+
+4. Classes abstract implementation details from their interfaces.
+
+All class member functions document their effects, either through function names, comments, or formal documentation. Member functions do not change program state in undocumented ways.
+
+user.cpp
+
 ## Dependencies for Running Locally
 * cmake >= 3.7
   * All OSes: [click here for installation instructions](https://cmake.org/install/)
