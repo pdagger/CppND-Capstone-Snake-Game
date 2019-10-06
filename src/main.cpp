@@ -3,6 +3,7 @@
 #include "game.h"
 #include "renderer.h"
 #include "user.h"
+#include "data.h"
 
 int main() {
   constexpr std::size_t kFramesPerSecond{60};
@@ -14,16 +15,24 @@ int main() {
 
 
   User user;
+  Data data;
   while (true) {
 	  Renderer renderer(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
 	  Controller controller;
 	  Game game(kGridWidth, kGridHeight);
 	  game.Run(controller, renderer, kMsPerFrame, user);
+	  // Get end of party statistics
+	  string name = user.GetName();
+	  int score = game.GetScore();
+	  int size = game.GetSize();
+	  // Print out
 	  std::cout << "Game has terminated successfully!\n";
-	  std::cout << "Player: " << user.GetName() << "\n";
-	  std::cout << "Score: " << game.GetScore() << "\n";
-	  std::cout << "Size: " << game.GetSize() << "\n";
-
+	  std::cout << "Player: " << name << "\n";
+	  std::cout << "Score: " << score << "\n";
+	  std::cout << "Size: " << size << "\n";
+	  // Write game data to file
+	  data.WriteInFile(name, score, size);
+	  // Kill renderer
 	  renderer.~Renderer();
 	  // Check if the user wants to play again
 	  bool again = user.Continue();
@@ -31,5 +40,6 @@ int main() {
 	  	break;
 	  }
 	}
+  //data.CloseFile(); 
   return 0;
 }
