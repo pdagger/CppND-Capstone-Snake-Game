@@ -2,7 +2,12 @@
 #include <iostream>
 #include <locale>  
 
-
+User::User(){
+	string name;
+	cout << "Player name: ";
+	cin >> name;
+	_name = name;
+}
 
 bool User::Continue(){
 	// Asks the user if he wants to play another party,
