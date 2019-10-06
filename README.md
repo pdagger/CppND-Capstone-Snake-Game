@@ -1,12 +1,10 @@
 # CPPND: Capstone Snake Game Example
 
-This is a starter repo for the Capstone project in the [Udacity C++ Nanodegree Program](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213). The code for this repo was inspired by [this](https://codereview.stackexchange.com/questions/212296/snake-game-in-c-with-sdl) excellent StackOverflow post and set of responses.
+This is the Capstone project of the Udacity C++ Nanodegree Program based on the starter repo found [here](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213). The code for that repo was inspired by [this](https://codereview.stackexchange.com/questions/212296/snake-game-in-c-with-sdl) excellent StackOverflow post and set of responses.
 
 <img src="snake_game.gif"/>
 
-The Capstone Project gives you a chance to integrate what you've learned throughout this program. This project will become an important part of your portfolio to share with current and future colleagues and employers.
-
-In this project, you can build your own C++ application or extend this Snake game, following the principles you have learned throughout this Nanodegree Program. This project will demonstrate that you can independently create applications using a wide range of C++ features.
+In this project, the code is expanded to properly finish a game party while offering to the user the option to continue playing each time a party is finished.
 
 # Criteria:
 1. The project accepts user input and processes the input.
@@ -15,7 +13,7 @@ The project accepts input from a user as part of the necessary operation of the 
 
 user.cpp line 14-29
 
-1. The project makes use of references in function declarations.
+2. The project makes use of references in function declarations.
 
 At least two variables are defined as references, or two functions use pass-by-reference in the project code.
 
@@ -23,19 +21,19 @@ snake.h line 21, snake.cpp lines 22-29
 
 user.h line 9, user.cpp lines 31-35
 
-2. The project uses Object Oriented Programming techniques.
+3. The project uses Object Oriented Programming techniques.
 
 The project code is organized into classes with class attributes to hold the data, and class methods to perform tasks.
 
 user.h and user.cpp
 
-3. Classes use appropriate access specifiers for class members.
+4. Classes use appropriate access specifiers for class members.
 
 All class data members are explicitly specified as public, protected, or private.
 
 user.h lines 6 to 12
 
-4. Classes abstract implementation details from their interfaces.
+5. Classes abstract implementation details from their interfaces.
 
 All class member functions document their effects, either through function names, comments, or formal documentation. Member functions do not change program state in undocumented ways.
 
