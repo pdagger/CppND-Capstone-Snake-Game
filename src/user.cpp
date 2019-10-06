@@ -5,7 +5,7 @@
 
 
 bool User::Continue(){
-	// Asks the user ih he wants to play another party,
+	// Asks the user if he wants to play another party,
 	// depending on the answer the output is true or false
 	while (true) {
 		// Ask user and get input
