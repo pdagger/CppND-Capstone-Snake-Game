@@ -18,8 +18,9 @@ int main() {
 	  Renderer renderer(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
 	  Controller controller;
 	  Game game(kGridWidth, kGridHeight);
-	  game.Run(controller, renderer, kMsPerFrame);
+	  game.Run(controller, renderer, kMsPerFrame, user);
 	  std::cout << "Game has terminated successfully!\n";
+	  std::cout << "Player: " << user.GetName() << "\n";
 	  std::cout << "Score: " << game.GetScore() << "\n";
 	  std::cout << "Size: " << game.GetSize() << "\n";
 

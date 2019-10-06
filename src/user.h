@@ -8,7 +8,7 @@ using namespace std;
 class User {
 	public:
 		User();
-		string getName() { return _name; }
+		string GetName() { return _name; }
 		bool Continue();
 
 	private:
