@@ -9,6 +9,12 @@ The Capstone Project gives you a chance to integrate what you've learned through
 In this project, you can build your own C++ application or extend this Snake game, following the principles you have learned throughout this Nanodegree Program. This project will demonstrate that you can independently create applications using a wide range of C++ features.
 
 # Criteria:
+1. The project accepts user input and processes the input.
+
+The project accepts input from a user as part of the necessary operation of the program.
+
+user.cpp line 14-29
+
 1. The project makes use of references in function declarations.
 
 At least two variables are defined as references, or two functions use pass-by-reference in the project code.
@@ -33,7 +39,7 @@ user.h lines 6 to 12
 
 All class member functions document their effects, either through function names, comments, or formal documentation. Member functions do not change program state in undocumented ways.
 
-user.cpp
+user.cpp and snake.cpp lines 22-29
 
 ## Dependencies for Running Locally
 * cmake >= 3.7
