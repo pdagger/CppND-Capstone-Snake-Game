@@ -6,8 +6,9 @@ using namespace std;
 class User {
 	public:
 		bool Continue();
+		
+	private:
 		void LowerCase(string &option);
-
 };
 
 #endif
