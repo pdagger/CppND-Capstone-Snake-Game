@@ -2,6 +2,7 @@
 #include "controller.h"
 #include "game.h"
 #include "renderer.h"
+#include "user.h"
 
 int main() {
   constexpr std::size_t kFramesPerSecond{60};
@@ -11,12 +12,23 @@ int main() {
   constexpr std::size_t kGridWidth{32};
   constexpr std::size_t kGridHeight{32};
 
-  Renderer renderer(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
-  Controller controller;
-  Game game(kGridWidth, kGridHeight);
-  game.Run(controller, renderer, kMsPerFrame);
-  std::cout << "Game has terminated successfully!\n";
-  std::cout << "Score: " << game.GetScore() << "\n";
-  std::cout << "Size: " << game.GetSize() << "\n";
+
+  User user;
+  while (true) {
+	  Renderer renderer(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
+	  Controller controller;
+	  Game game(kGridWidth, kGridHeight);
+	  game.Run(controller, renderer, kMsPerFrame);
+	  std::cout << "Game has terminated successfully!\n";
+	  std::cout << "Score: " << game.GetScore() << "\n";
+	  std::cout << "Size: " << game.GetSize() << "\n";
+
+	  renderer.~Renderer();
+	  // Check if the user wants to play again
+	  bool again = user.Continue();
+	  if (!again) {
+	  	break;
+	  }
+	}
   return 0;
 }
