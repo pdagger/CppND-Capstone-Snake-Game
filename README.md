@@ -44,7 +44,7 @@ At least two variables are defined as references, or two functions use pass-by-r
 
 See snake.h line 21, snake.cpp lines 22-29.
 
-See user.h line 9, user.cpp lines 31-35
+See user.h line 9, user.cpp lines 31-35.
 
 ##### 6. The project uses Object Oriented Programming techniques.
 
