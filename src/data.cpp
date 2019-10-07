@@ -40,7 +40,6 @@ void Data::WriteInFile(string name, int score, int size, string rewrite) {
 	dataFile << name << " " << score << " " << size << "\n";
 }
 
-
 void Data::SortFile() {
 	// Sorts file with respect to score
 	// The data is first stored in a vector where each element is
@@ -52,7 +51,7 @@ void Data::SortFile() {
 	getline(dataFile, line);
 	// make operations after first line
 	while (getline(dataFile, line)) {
-		std::istringstream linestream(line);
+		istringstream linestream(line);
 		vector<string> line_data;
 		string info;
 		// append player, score and size in a vector
@@ -75,3 +74,24 @@ void Data::SortFile() {
 	CloseFile();
 }
 
+void Data::PrintTop5() {
+	// Output to the screen the best 5 scores
+	int i = 0;
+	string line;
+
+	SortFile();
+	OpenFile();
+	
+	cout << "Top 5 scores: \n";
+	while (getline(dataFile, line) && (i < 5)) {
+		istringstream linestream(line);
+		vector<string> line_data;
+		string info;
+		// append player, score and size in a vector
+		while (getline(linestream, info, ' ')) {
+			line_data.push_back(info);
+		}
+		// Print
+		cout << i << ". " + line_data[0] + ": score " + line_data[1] + " - size " + line_data[2] + "\n";
+	}
+}

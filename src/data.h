@@ -15,6 +15,7 @@ class Data {
 		void WriteInFile(string name, int score, int size);
 		void WriteInFile(string name, int score, int size, string rewrite);
 		void SortFile();
+		void PrintTop5();
 
 	private:
 		fstream dataFile;
