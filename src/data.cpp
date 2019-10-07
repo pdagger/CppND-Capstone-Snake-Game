@@ -1,9 +1,10 @@
 #include "data.h"
 #include <iostream>
 #include <sstream>
-#include <string>
+
 #include <vector>
-#include <tuple>
+
+#include <algorithm>
 
 Data::Data() {
 	OpenFile();
@@ -19,7 +20,7 @@ Data::Data() {
 
 void Data::OpenFile() {
 	// Opens data file, if it doesn't exist, it is created
-	dataFile.open("data.txt", std::fstream::in | std::fstream::out | std::fstream::app);
+	dataFile.open("data.txt", fstream::in | fstream::out | fstream::app);
 }
 
 void Data::CloseFile() {
@@ -32,6 +33,13 @@ void Data::WriteInFile(string name, int score, int size) {
 	dataFile << name << " " << score << " " << size << "\n";
 	CloseFile();
 }
+
+void Data::WriteInFile(string name, int score, int size, string rewrite) {
+	// Writes player's name, score and size in data file without 
+	// opening or closing it each time
+	dataFile << name << " " << score << " " << size << "\n";
+}
+
 
 void Data::SortFile() {
 	// Sorts file with respect to score
@@ -54,5 +62,16 @@ void Data::SortFile() {
 		// apennd tuples (score, size, name) to vector of tuples
 		data.push_back(make_tuple(stoi(line_data[1]), stoi(line_data[2]), line_data[0]));
 	}
-	
+	CloseFile();
+	// Sort tuple
+	sort(data.begin(), data.end());
+	// Rewrite data file
+	dataFile.open("data.txt", fstream::out |fstream::trunc);
+	// First line
+	dataFile << "Player Score Size\n";
+	for (int i = data.size(); i > 0; i--) {
+		WriteInFile(get<2>(data[i-1]), get<0>(data[i-1]), get<1>(data[i-1]), "rewrite");
+	}
+	CloseFile();
 }
+
