@@ -40,6 +40,6 @@ int main() {
 	  	break;
 	  }
 	}
-  //data.CloseFile(); 
+  data.SortFile(); 
   return 0;
 }

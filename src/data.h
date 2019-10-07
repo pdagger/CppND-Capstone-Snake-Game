@@ -11,6 +11,7 @@ class Data {
 		void OpenFile();
 		void CloseFile();
 		void WriteInFile(string name, int score, int size);
+		void SortFile();
 
 	private:
 		fstream dataFile;
