@@ -75,13 +75,17 @@ void Data::SortFile() {
 }
 
 void Data::PrintTop5() {
-	// Output to the screen the best 5 scores
+	// Outputs to the screen the best 5 scores
 	int i = 0;
 	string line;
 
 	SortFile();
 	OpenFile();
-	
+	// Ignore first line
+	getline(dataFile, line);
+	// Print top 5
+	cout << "--------------------------------------\n";
+	cout << "--------------------------------------\n";
 	cout << "Top 5 scores: \n";
 	while (getline(dataFile, line) && (i < 5)) {
 		istringstream linestream(line);
@@ -91,7 +95,10 @@ void Data::PrintTop5() {
 		while (getline(linestream, info, ' ')) {
 			line_data.push_back(info);
 		}
+		i++;
 		// Print
-		cout << i << ". " + line_data[0] + ": score " + line_data[1] + " - size " + line_data[2] + "\n";
+		cout << i << ". " + line_data[0] + ": score " + line_data[1] + " - snake size " + line_data[2] + "\n";
 	}
+	cout << "--------------------------------------\n";
+	cout << "--------------------------------------\n";
 }

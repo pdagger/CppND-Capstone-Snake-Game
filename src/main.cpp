@@ -40,6 +40,6 @@ int main() {
 	  	break;
 	  }
 	}
-  data.SortFile(); 
+  data.PrintTop5(); 
   return 0;
 }
