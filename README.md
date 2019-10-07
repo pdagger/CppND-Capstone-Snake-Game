@@ -4,40 +4,65 @@ This is the Capstone project of the Udacity C++ Nanodegree Program based on the 
 
 <img src="snake_game.gif"/>
 
-In this project, the code is expanded to properly finish a game party while offering to the user the option to continue playing each time a party is finished.
+In this project, the code is expanded to properly finish a game party while offering to the user the option to continue playing each time a party is finished. When the user doesn't want to play anymore, the prompt displays the historically top 5 players that have played the game.
+
+To accomplish the described behavior, two additional classes were created: User and Data. For each one, .h and cpp files were created. The User class asks for the player's name and keeps it in memory while at the same time it contains functions to ask the user if he/she wishes to continue playing after the snake dies or if prefers to quit the game.
+
+The Data class, manages everything related to the game statistics and stores them on file. Each time a party is finished, the user's name, score and snake size is saved into a data base. When the user decides to quit the game, the data base is sorted in descending order with respect to the saved scores and the top 5 players with scores and snake sizes are displayed to the user. If there is not a data base in the computer, the Data class creates a Data base on the build folder. Usually this happens when the game is played for the first time or if the user's manually deletes the data base.
+
+To pass the project at least 5 optional criteria need to be accomplished. The section below describes at least 5 criteria that the project meets.
 
 # Criteria:
-1. The project accepts user input and processes the input.
+
+##### 1. The project demonstrates an understanding of C++ functions and control structures.
+
+A variety of control structures are used in the project. The project code is clearly organized into functions.
+
+See main.cpp, user.h, user.cpp, data.h and data.cpp.
+
+##### 2. The project reads data from a file and process the data, or the program writes data to a file.
+
+The project reads data from an external file or writes data to a file as part of the necessary operation of the program.
+
+See data.cpp. The constructor creates a file and the other functions read or write into that file.
+
+##### 3. The project accepts user input and processes the input.
 
 The project accepts input from a user as part of the necessary operation of the program.
 
-user.cpp line 14-29
+See user.cpp lines 14-29.
 
-2. The project makes use of references in function declarations.
-
-At least two variables are defined as references, or two functions use pass-by-reference in the project code.
-
-snake.h line 21, snake.cpp lines 22-29
-
-user.h line 9, user.cpp lines 31-35
-
-3. The project uses Object Oriented Programming techniques.
+##### 4. The project uses Object Oriented Programming techniques.
 
 The project code is organized into classes with class attributes to hold the data, and class methods to perform tasks.
 
-user.h and user.cpp
+See user.h, user.cpp, data.h and data.cpp.
 
-4. Classes use appropriate access specifiers for class members.
+##### 5. The project makes use of references in function declarations.
+
+At least two variables are defined as references, or two functions use pass-by-reference in the project code.
+
+See snake.h line 21, snake.cpp lines 22-29.
+
+See user.h line 9, user.cpp lines 31-35
+
+##### 6. The project uses Object Oriented Programming techniques.
+
+The project code is organized into classes with class attributes to hold the data, and class methods to perform tasks.
+
+See files user.h and user.cpp, and data.h and data.cpp.
+
+##### 7. Classes use appropriate access specifiers for class members.
 
 All class data members are explicitly specified as public, protected, or private.
 
-user.h lines 6 to 12
+See user.h lines 6 to 12 and data.h.
 
-5. Classes abstract implementation details from their interfaces.
+##### 8. Classes abstract implementation details from their interfaces.
 
 All class member functions document their effects, either through function names, comments, or formal documentation. Member functions do not change program state in undocumented ways.
 
-user.cpp and snake.cpp lines 22-29
+See comments on functions for user.cpp and data.cpp,  plus snake.cpp at lines 22-29.
 
 ## Dependencies for Running Locally
 * cmake >= 3.7
